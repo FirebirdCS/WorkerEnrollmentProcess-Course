@@ -131,6 +131,185 @@ namespace ServiceReference
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CandidateRecordRequest", Namespace="http://tempuri.org/")]
+    public partial class CandidateRecordRequest : object
+    {
+        
+        private string ApellidosField;
+        
+        private string NombresField;
+        
+        private string DireccionField;
+        
+        private string TelefonoField;
+        
+        private string EmailField;
+        
+        private string CarreraIdField;
+        
+        private string ExamenIdField;
+        
+        private string JornadaIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Apellidos
+        {
+            get
+            {
+                return this.ApellidosField;
+            }
+            set
+            {
+                this.ApellidosField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Nombres
+        {
+            get
+            {
+                return this.NombresField;
+            }
+            set
+            {
+                this.NombresField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Direccion
+        {
+            get
+            {
+                return this.DireccionField;
+            }
+            set
+            {
+                this.DireccionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Telefono
+        {
+            get
+            {
+                return this.TelefonoField;
+            }
+            set
+            {
+                this.TelefonoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Email
+        {
+            get
+            {
+                return this.EmailField;
+            }
+            set
+            {
+                this.EmailField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string CarreraId
+        {
+            get
+            {
+                return this.CarreraIdField;
+            }
+            set
+            {
+                this.CarreraIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string ExamenId
+        {
+            get
+            {
+                return this.ExamenIdField;
+            }
+            set
+            {
+                this.ExamenIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string JornadaId
+        {
+            get
+            {
+                return this.JornadaIdField;
+            }
+            set
+            {
+                this.JornadaIdField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CandidateRecordResponse", Namespace="http://tempuri.org/")]
+    public partial class CandidateRecordResponse : object
+    {
+        
+        private int CodigoField;
+        
+        private string RespuestaField;
+        
+        private string NoExpedienteField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int Codigo
+        {
+            get
+            {
+                return this.CodigoField;
+            }
+            set
+            {
+                this.CodigoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Respuesta
+        {
+            get
+            {
+                return this.RespuestaField;
+            }
+            set
+            {
+                this.RespuestaField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string NoExpediente
+        {
+            get
+            {
+                return this.NoExpedienteField;
+            }
+            set
+            {
+                this.NoExpedienteField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IEnrollmentService")]
     public interface IEnrollmentService
@@ -141,6 +320,9 @@ namespace ServiceReference
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEnrollmentService/EnrollmentProcess", ReplyAction="*")]
         System.Threading.Tasks.Task<ServiceReference.EnrollmentProcessResponse> EnrollmentProcessAsync(ServiceReference.EnrollmentProcessRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEnrollmentService/CandidateRegisterProcess", ReplyAction="*")]
+        System.Threading.Tasks.Task<ServiceReference.CandidateRegisterProcessResponse> CandidateRegisterProcessAsync(ServiceReference.CandidateRegisterProcessRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -171,15 +353,15 @@ namespace ServiceReference
     {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string s1;
+        public string s;
         
         public TestRequestBody()
         {
         }
         
-        public TestRequestBody(string s1)
+        public TestRequestBody(string s)
         {
-            this.s1 = s1;
+            this.s = s;
         }
     }
     
@@ -303,6 +485,86 @@ namespace ServiceReference
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CandidateRegisterProcessRequest
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CandidateRegisterProcess", Namespace="http://tempuri.org/", Order=0)]
+        public ServiceReference.CandidateRegisterProcessRequestBody Body;
+        
+        public CandidateRegisterProcessRequest()
+        {
+        }
+        
+        public CandidateRegisterProcessRequest(ServiceReference.CandidateRegisterProcessRequestBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CandidateRegisterProcessRequestBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ServiceReference.CandidateRecordRequest request;
+        
+        public CandidateRegisterProcessRequestBody()
+        {
+        }
+        
+        public CandidateRegisterProcessRequestBody(ServiceReference.CandidateRecordRequest request)
+        {
+            this.request = request;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CandidateRegisterProcessResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CandidateRegisterProcessResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ServiceReference.CandidateRegisterProcessResponseBody Body;
+        
+        public CandidateRegisterProcessResponse()
+        {
+        }
+        
+        public CandidateRegisterProcessResponse(ServiceReference.CandidateRegisterProcessResponseBody Body)
+        {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class CandidateRegisterProcessResponseBody
+    {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public ServiceReference.CandidateRecordResponse CandidateRegisterProcessResult;
+        
+        public CandidateRegisterProcessResponseBody()
+        {
+        }
+        
+        public CandidateRegisterProcessResponseBody(ServiceReference.CandidateRecordResponse CandidateRegisterProcessResult)
+        {
+            this.CandidateRegisterProcessResult = CandidateRegisterProcessResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
     public interface IEnrollmentServiceChannel : ServiceReference.IEnrollmentService, System.ServiceModel.IClientChannel
     {
@@ -359,11 +621,11 @@ namespace ServiceReference
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<ServiceReference.TestResponse> TestAsync(string s1)
+        public System.Threading.Tasks.Task<ServiceReference.TestResponse> TestAsync(string s)
         {
             ServiceReference.TestRequest inValue = new ServiceReference.TestRequest();
             inValue.Body = new ServiceReference.TestRequestBody();
-            inValue.Body.s1 = s1;
+            inValue.Body.s = s;
             return ((ServiceReference.IEnrollmentService)(this)).TestAsync(inValue);
         }
         
@@ -379,6 +641,20 @@ namespace ServiceReference
             inValue.Body = new ServiceReference.EnrollmentProcessRequestBody();
             inValue.Body.request = request;
             return ((ServiceReference.IEnrollmentService)(this)).EnrollmentProcessAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ServiceReference.CandidateRegisterProcessResponse> ServiceReference.IEnrollmentService.CandidateRegisterProcessAsync(ServiceReference.CandidateRegisterProcessRequest request)
+        {
+            return base.Channel.CandidateRegisterProcessAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference.CandidateRegisterProcessResponse> CandidateRegisterProcessAsync(ServiceReference.CandidateRecordRequest request)
+        {
+            ServiceReference.CandidateRegisterProcessRequest inValue = new ServiceReference.CandidateRegisterProcessRequest();
+            inValue.Body = new ServiceReference.CandidateRegisterProcessRequestBody();
+            inValue.Body.request = request;
+            return ((ServiceReference.IEnrollmentService)(this)).CandidateRegisterProcessAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
