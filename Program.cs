@@ -98,7 +98,7 @@ public class Program
         CandidateRecordResponse candidateRecordResponse = null;
         try
         {
-            var client = new EnrollmentServiceClient(EnrollmentServiceClient.EndpointConfiguration.BasicHttpBinding_IEnrollmentService_soap, "http://localhost:5181/EnrollmentService.asmx");
+            var client = new EnrollmentServiceClient(EnrollmentServiceClient.EndpointConfiguration.BasicHttpBinding_IEnrollmentService_soap, "http://localhost:5267/EnrollmentService.asmx");
             var response = await client.CandidateRegisterProcessAsync(request);
             candidateRecordResponse = new CandidateRecordResponse()
             {
@@ -129,7 +129,7 @@ public class Program
         EnrollmentResponse enrollmentResponse = null;
         try
         {
-            var client = new EnrollmentServiceClient(EnrollmentServiceClient.EndpointConfiguration.BasicHttpBinding_IEnrollmentService_soap, "http://localhost:5181/EnrollmentService.asmx");
+            var client = new EnrollmentServiceClient(EnrollmentServiceClient.EndpointConfiguration.BasicHttpBinding_IEnrollmentService_soap, "http://localhost:5267/EnrollmentService.asmx");
             var response = await client.EnrollmentProcessAsync(request);
             enrollmentResponse = new EnrollmentResponse()
             {
